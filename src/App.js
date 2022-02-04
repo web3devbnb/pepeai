@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes } from "react-router-dom";
 import ConnectPopup from "./components/ConnectPopup";
+import Sidebar from "./components/Sidebar";
 
 function App() {
     const [popupShow, setPopupShow] = useState(false);
@@ -24,6 +25,7 @@ function App() {
 
     return (
         <>
+            <Sidebar />
             <main className="main">
                 <Routes>
 

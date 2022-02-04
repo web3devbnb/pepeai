@@ -1,5 +1,9 @@
 /*-------- Basic --------*/
 
+html, body, #root {
+    height: 100%;
+}
+
 body {
     min-width: 320px;
     background: radial-gradient(50% 50% at 50% 50%, #363434 0%, #161616 100%);
