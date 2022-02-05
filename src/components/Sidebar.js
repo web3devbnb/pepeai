@@ -74,7 +74,7 @@ export default function Sidebar() {
     }
 
     return (
-        <div className="sidebar">
+        <div className="sidebar scrollwrapper">
             <div className="sidebar__wrapper">
                 <Link to="/" className="sidebar__logo">
                     <img src={logoImage} alt="logo" className="sidebar__logo-image" />

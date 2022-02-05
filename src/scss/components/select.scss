@@ -6,45 +6,40 @@
     &__button {
         display: flex;
         align-items: center;
-
         width: 100%;
         height: 100%;
-        padding: 4px 12px 4px 4px;
+
+        padding: 0 20px;
 
         position: relative;
-        font-family: $font-sb;
-        font-size: 18px;
+        font-family: $font-r;
+        font-size: 16px;
         color: #ffffff;
+        border: 1px solid transparent;
 
-        border: 1px solid #484545;
-        border-radius: 8px;
-        background: #202226;
-        img {
-            height: 20px;
-            width: 20px;
-        }
+        border-radius: 20px;
+
+        z-index: 2;
+
+        transition: border-color 0.2s ease-out;
     }
 
     &__button-icon {
         flex-shrink: 0;
-        margin-right: 8px;
-    }
-
-    &__button-text {
-        margin-right: 8px;
-    }
-
-    &__button-arrows {
         margin-left: auto;
     }
 
-    &__wrapper {
-        padding: 10px;
+    &__list-wrapper {
+        width: 100%;
 
-        background: #202226;
-        box-shadow: 0 0 8px 6px rgba(255, 255, 255, 0.02);
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        background: rgba(32, 34, 38, 0.8);
         border: 1px solid #484545;
-        border-radius: 10px;
+        backdrop-filter: blur(40px);
+        border-radius: 8px;
+        box-shadow: 0 10px 14px 1px rgba(0, 0, 0, 0.64);
 
         position: absolute;
         top: 110%;
@@ -57,135 +52,55 @@
     }
 
     &__list {
-        width: 100%;
-        margin-top: 10px;
-        max-height: 200px;
-        overflow-y: auto;
+        max-height: 250px;
+
+        padding-right: 0;
     }
 
-    &.opened &__wrapper {
+    &.opened &__list-wrapper {
         opacity: 1;
         visibility: visible;
     }
 
-    &__input {
-        width: 100%;
-        height: 35px;
-        padding: 0 10px;
-
-        background: #1b1a1a;
-        border: 1px solid #484545;
-        border-radius: 2px;
-
-        color: #ffffff;
-        font-family: $font-m;
-        font-size: 14px;
+    &__item:not(:first-child) {
+        border-top: 1px solid rgba(232, 232, 232, 0.1);
     }
 
     &__item-button {
-        justify-content: flex-start;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
         width: 100%;
         min-height: 40px;
-        padding: 4px;
+        padding: 0 20px;
 
-        border-radius: 5px;
+        font-family: $font-r;
+        font-size: 14px;
+        color: #ffffff;
 
         transition: background-color 0.2s ease-out;
         text-align: left;
         line-height: 1.1;
+    }
 
-        font-family: $font-m;
-        font-size: 16px;
-        color: #ffffff;
-
-        img {
-            height: 20px;
-            width: 20px;
-        }
+    &__item-button.selected {
+        color: $red;
     }
 
     &__item-button:hover {
-        background-color: #2a2930;
-    }
-
-    &__item-icon {
-        margin-right: 10px;
+        text-decoration: underline;
     }
 }
 
 .select {
-    &--form {
-        margin-top: 38px;
-    }
-}
 
-.select {
-    &--input {
-        width: 110px;
-        position: absolute;
-        margin-top: 0;
-        left: 4px;
+    &--input-wrapper {
+        height: 100%;
     }
 
-    &--input:after {
-        content: "";
-        width: 1px;
-        height: 18px;
-        background-color: #484545;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    &--input &__button {
+    &--input-wrapper &__button {
+        border-radius: 0;
         border: none;
-    }
-}
-
-@media (max-width: 619px) {
-    .select {
-        &--form {
-            width: 104px;
-            margin-top: 18px;
-        }
-
-        &--form &__button {
-            font-size: 14px;
-            padding: 4px 8px 4px 4px;
-        }
-
-        &--form &__button-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        &--form &__item-button {
-            font-size: 14px;
-            min-height: 35px;
-        }
-
-        &--form &__item-icon {
-            width: 24px;
-            height: 24px;
-        }
-    }
-
-    .select {
-        &--input {
-            margin-top: 0;
-        }
-
-        &--input &__button {
-            padding: 4px 10px 4px 4px;
-        }
-    }
-}
-
-@media (max-width: 479px) {
-    .select {
-        &--input &__button {
-            padding: 0 10px 0 0;
-        }
     }
 }

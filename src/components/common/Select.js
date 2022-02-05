@@ -1,76 +1,57 @@
-import React, { useEffect, useState } from "react";
-import Enlarge from "../../icons/Enlarge";
+import React, { useEffect, useState } from 'react';
+import Arrow from '../../Icons/Arrow';
+import { checkForScrollbar } from "../../services/scrollbarService";
 
-export default function Select({
-    side,
-    setTokens,
-    selected,
-    className,
-    list,
-    callback,
-}) {
+export default function Select({ className, list, callback }) {
+    const [selectList, setSelectList] = useState(list);
     const [opened, setOpened] = useState(false);
-    const [search, setSearch] = useState("");
-    const [filteredList, setFilteredList] = useState(list);
+    let selectedTitle = selectList.find(item => item.selected === true).title;
 
-    function toggleSelect() {
-        setOpened((state) => !opened);
-        setSearch("");
+    function selectItem(index) {
+        setSelectList(state => state.map((item, itemIndex) => ({ ...item, selected: itemIndex === index ? true : false })));
+        callback && callback(index);
     }
 
-    function handleSearch(e) {
-        setSearch(e.target.value);
+    function toggleSelect() {
+        setOpened(state => !state);
     }
 
     useEffect(() => {
-        function handleDocumentClick(e) {
-            if (opened && !e.target.closest('.select')) {
+        function handleDocumentClick() {
+            if (opened) {
                 toggleSelect();
             }
-        }
+        };
 
-        document.addEventListener("click", handleDocumentClick);
-
-        setFilteredList(list.filter(listItem => (search === "") || (listItem.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()))));
+        document.addEventListener('click', handleDocumentClick);
 
         return () => {
-            document.removeEventListener("click", handleDocumentClick);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [opened, search]);
+            document.removeEventListener('click', handleDocumentClick);
+        }
+    }, [opened]);
 
     return (
-        <div className={"select " + (className || "") + (opened ? " opened" : "")}>
+        <div className={"select " + (className || "") + (opened ? " opened" : "") + (checkForScrollbar() ? " scroll-visible" : "")}>
             <button className="select__button" onClick={toggleSelect}>
-                <img src={selected.logoURI} alt="" className="select__button-icon" />
-                <span className="select__button-text">{selected.symbol}</span>
-                <Enlarge className="select__button-arrows" />
+                <span className="select__button-text">{selectedTitle}</span>
+                <Arrow className="select__button-icon" />
             </button>
-            <div className="select__wrapper">
-                <input className="select__input" placeholder="Search" value={search} onChange={handleSearch} />
-                <ul className="select__list scrollwrapper">
-                    {filteredList.map((item, index) => {
+            <div className="select__list-wrapper">
+                <ul className="select__list scrollwrapper select__scrollwrapper">
+                    {selectList.map((item, index) => {
                         return (
-                            <li className="select__item" key={index}>
+                            <li className="select__item" key={item.id}>
                                 <button
-                                    className="select__item-button"
+                                    className={"select__item-button" + (item.selected ? " selected" : "")}
                                     onClick={() => {
-                                        setTokens(filteredList[index], side);
-                                        toggleSelect();
+                                        selectItem(index);
                                     }}
-                                >
-                                    <img
-                                        src={item.logoURI}
-                                        alt=""
-                                        className="select__button-icon"
-                                    />
-                                    <span>{item.symbol}</span>
-                                </button>
+                                >{item.title}</button>
                             </li>
                         );
                     })}
                 </ul>
             </div>
         </div>
-    );
+    )
 }

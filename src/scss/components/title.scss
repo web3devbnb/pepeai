@@ -1,0 +1,28 @@
+/*-------- Title --------*/
+
+.title {
+    font-family: $font-stx;
+    color: #ffffff;
+}
+
+.title {
+
+    &--home {
+        font-size: 44px;
+        text-align: center;
+    }
+}
+
+.title {
+
+    &--form {
+        font-size: 26px;
+    }
+}
+
+.title {
+
+    &--page {
+        font-size: 32px;
+    }
+}

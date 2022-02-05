@@ -1,0 +1,62 @@
+/*-------- Home --------*/
+
+.home {
+    padding-top: 140px;
+
+    &__text {
+        margin-top: 28px;
+
+        max-width: 844px;
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 18px;
+        color: $mudy;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    &__button {
+        width: 180px;
+    }
+
+    &__button:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    &__stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 56px;
+    }
+
+    &__stats-item {
+        width: calc(25% - 20px);
+        padding: 36px 32px;
+
+        background: rgba(32, 34, 38, 0.8);
+        border: 1px solid #484545;
+        backdrop-filter: blur(40px);
+        border-radius: 26px;
+
+        text-align: center;
+    }
+
+    &__stats-name {
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+    }
+
+    &__stats-value {
+        margin-top: 12px;
+        font-family: $font-stx;
+        font-size: 48px;
+        color: #fff;
+    }
+}

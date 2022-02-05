@@ -1,12 +1,16 @@
 /*-------- Button --------*/
 
 .button {
-    height: 64px;
-    padding: 0 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    border-radius: 12px;
+    height: 48px;
+    padding: 0 20px;
+
+    border-radius: 8px;
     
-    font-family: $font-sb;
+    font-family: $font-r;
     color: #ffffff;
     font-size: 14px;
 
@@ -42,76 +46,20 @@
 
 .button {
 
-    &--white {
-        background-color: #ffffff;
-        color: $black1;
-    }
-}
-
-.button {
-
-    &--header {
-        height: 48px;
-        width: 224px;
-        margin-left: 24px;
-        margin-right: 24px;
-    }
-}
-
-.button {
-
-    &--more {
-        width: 24px;
-        height: 24px;
-        padding: 0;
-    }
-
-    &--more:hover &__icon {
-        color: $red;
-    }
-}
-
-.button {
-
-    &--form {
-        width: 100%;
-        font-size: 18px;
-    }
-}
-
-.button {
-
-    &--round {
-        width: 48px;
-        height: 48px;
-
-        padding: 0;
-
-        background: #1B1A1A;
-        border-radius: 50%;
-        color: #ffffff;
-    }
-
-    &--round:hover {
-        background: #242323;  
-    }
-}
-
-.button {
-
     &--grey {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.05);
     }
 
     &--grey:hover {
         color: $red;
+        background-color: rgba(255, 255, 255, 0.1)
     }
 }
 
 .button {
 
-    &--plus:hover &__icon {
-        opacity: 1;
+    &--border {
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
 }
 
