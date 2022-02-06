@@ -1,0 +1,89 @@
+/*-------- Catalog --------*/
+
+.catalog {
+
+    &__tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 56px;
+        margin-top: 24px;
+
+        position: relative;
+    }
+
+    &__tabs:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+
+        position: absolute;
+        top: 100%;
+
+        background: radial-gradient(61.39% 50% at 50% 50%, #7D7C7C 0%, rgba(72, 69, 69, 0) 100%);
+    }
+
+    &__tabs-item {
+        height: 100%;
+    }
+
+    &__tabs-item:not(:first-child) {
+        margin-left: 72px;
+    }
+
+    &__tabs-button {
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+        font-size: 16px;
+        font-family: $font-r;
+        color: rgba(255, 255, 255, 0.5);
+
+        position: relative;
+
+        transition: color 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &__tabs-button:after {
+        content: "";
+
+        width: 100%;
+        height: 4px;
+
+        border-radius: 32px 32px 0px 0px;
+        background-color: $red;
+
+        position: absolute;
+        top: calc(100% - 3px);
+
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &__tabs-button.active {
+        font-family: $font-sb;
+        color: #fff;
+    }
+
+    &__tabs-button.active:after {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__tabs-button:not(.active):hover {
+        color: #fff;
+    }
+
+    &__filters {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 24px;
+    }
+
+    &__filter:not(:first-child) {
+        margin-left: 20px;
+    }
+}

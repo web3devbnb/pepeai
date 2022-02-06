@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Arrow from '../../Icons/Arrow';
 import { checkForScrollbar } from "../../services/scrollbarService";
 
-export default function Select({ className, list, callback }) {
+export default function Select({ className, list, callback, Icon }) {
     const [selectList, setSelectList] = useState(list);
     const [opened, setOpened] = useState(false);
     let selectedTitle = selectList.find(item => item.selected === true).title;
@@ -33,8 +33,9 @@ export default function Select({ className, list, callback }) {
     return (
         <div className={"select " + (className || "") + (opened ? " opened" : "") + (checkForScrollbar() ? " scroll-visible" : "")}>
             <button className="select__button" onClick={toggleSelect}>
+                {Icon && <Icon className="select__button-icon" />}
                 <span className="select__button-text">{selectedTitle}</span>
-                <Arrow className="select__button-icon" />
+                <Arrow className="select__button-arrow" />
             </button>
             <div className="select__list-wrapper">
                 <ul className="select__list scrollwrapper select__scrollwrapper">

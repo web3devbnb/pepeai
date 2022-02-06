@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "../common/Form";
 import Input from "../common/Input";
+import Select from "../common/Select";
 
 const selectList = [
     { title: "Standard token", id: 0, selected: true },
@@ -24,7 +25,12 @@ export default function CreateToken() {
             <h1 className="title title--page">Create token</h1>
             <Form className="form--token">
                 <h2 className="title title--form form__title">Creating a new token</h2>
-                <Input title="Token Type" placeholder="Select token..." className="form__input-wrapper" type="select" list={selectList} />
+                <div className="input-wrapper form__input-wrapper">
+                    <div className="input-wrapper__header">
+                        <label className="label">Token Type</label>
+                    </div>
+                    <Select className="select--token" list={selectList} />
+                </div>
                 <Input title="Name" displayType="input" placeholder="Ex: Sensei Swap" className="form__input-wrapper" type="text" name="name" value={form.name} onChange={handleInput} />
                 <Input title="Symbol" displayType="input" placeholder="Ex: $SENSEI" className="form__input-wrapper" type="text" name="symbol" value={form.symbol} onChange={handleInput} />
                 <Input title="Decimals" displayType="input" placeholder="Ex: 18" className="form__input-wrapper" type="text" name="decimals" value={form.decimals} onChange={handleInput} />
