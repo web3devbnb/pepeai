@@ -15,7 +15,9 @@ export default function Input({ className, type = "text", value, onChange, title
             <div className="input-wrapper__row">
                 {type === "text" ?
                     <input type={type} className="input-wrapper__input" value={value} onChange={onChange} id={id} placeholder={placeholder} {...props} /> :
-                    <NumberFormat className="input-wrapper__input" value={value} onValueChange={onChange} id={id} thousandSeparator={separator} displayType={displayType} allowLeadingZeros={false} allowNegative={false} placeholder={placeholder} {...props} />
+                    type === "textarea" ?
+                        <textarea className="input-wrapper__input" value={value} onChange={onChange} id={id} placeholder={placeholder} {...props} /> :
+                        <NumberFormat className="input-wrapper__input" value={value} onValueChange={onChange} id={id} thousandSeparator={separator} displayType={displayType} allowLeadingZeros={false} allowNegative={false} placeholder={placeholder} {...props} />
                 }
             </div>
             {errors &&

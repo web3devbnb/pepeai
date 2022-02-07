@@ -1,0 +1,178 @@
+/*-------- Details --------*/
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__top-column {
+        margin-left: 20px;
+    }
+
+    &__back {
+        margin-right: 18px;
+    }
+
+    &__back-icon {
+        color: #fff;
+        transition: color 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    &__back-icon:hover {
+        color: $red;
+    }
+
+    &__wrapper {
+        padding: 24px;
+        background: rgba(32, 34, 38, 0.8);
+        border: 1px solid #484545;
+        backdrop-filter: blur(40px);
+        border-radius: 26px;
+    }
+
+    &__wrapper:not(:first-child) {
+        margin-top: 18px;
+    }
+
+    &__wrapper--2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-family: $font-stx;
+        font-size: 26px;
+        color: #fff;
+    }
+
+    &__column--1 {
+        width: 66%;
+    }
+
+    &__column--2 {
+        width: calc(34% - 20px);
+    }
+
+    &__social {
+        margin-top: 5px;
+    }
+
+    &__badge {
+        margin-left: auto;
+    }
+
+    &__list--main {
+        margin-top: 24px;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item-column {
+        text-align: right;
+    }
+
+    &__item:not(:first-child) {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #3D3D3D;
+    }
+
+    &__item-text {
+        font-family: $font-r;
+        font-size: 16px;
+    }
+
+    &__item-text--value {
+        color: #fff;
+    }
+
+    &__item-text--copy {
+        display: flex;
+        align-items: center;
+
+        transition: color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    &__item-text--copy:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+
+        background-image: url(../../img/svg/copy.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__item-text--copy:hover {
+        color: $red;
+    }
+
+    &__item-text--underline {
+        text-decoration: underline;
+    }
+
+    &__warning {
+        margin-top: 8px;
+        color: $blue;
+    }
+
+    &__info {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+
+        padding: 10px 21px;
+        background: rgba(231, 45, 45, 0.1);
+        border-radius: 8px;
+        color: #fff;
+    }
+
+    &__countdown-wrapper {
+        margin-top: 20px;
+    }
+
+    &__countdown-title {
+        color: #fff;
+        text-align: center;
+    }
+
+    &__countdown {
+        margin-top: 12px;
+    }
+
+    &__progress {
+        margin-top: 20px;
+        margin-bottom: 17px;
+    }
+
+    &__input-wrapper {
+        margin-top: 12px;
+    }
+
+    &__button {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    &__comments {
+        margin-top: 30px;
+    }
+}

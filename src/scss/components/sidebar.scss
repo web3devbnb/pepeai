@@ -141,25 +141,6 @@
         margin-top: auto;
     }
 
-    &__social {
-        display: flex;
-    }
-
-    &__social-icon {
-        color: #fff;
-        transition: color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    &__social-icon:hover {
-        color: $red;
-    }
-
-    &__social-item:not(:first-child) {
-        margin-left: 15px;
-        padding-left: 15px;
-        border-left: 1px solid #3D3D3D;
-    }
-
     &__switcher {
         margin-left: auto;
     }

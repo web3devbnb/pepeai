@@ -5,15 +5,13 @@ import logoImage from "../img/common/logo.png";
 import bscIcon from "../img/icons/bsc.png";
 import Home from './../Icons/Home';
 import Rocket from './../Icons/Rocket';
-import Globe from './../Icons/Globe';
-import Telegram from './../Icons/Telegram';
-import Twitter from './../Icons/Twitter';
 import switcherImage from "../img/svg/switcher.svg";
 import Lock from './../Icons/Lock';
 import Balloon from './../Icons/Balloon';
 import Arrow from './../Icons/Arrow';
 import addToRefs from './../services/addToRefs';
 import { useLocation } from 'react-router-dom';
+import Social from './common/Social';
 
 const menu = [
     {
@@ -122,23 +120,7 @@ export default function Sidebar() {
                 })}
             </ul>
             <footer className="sidebar__footer sidebar__wrapper">
-                <ul className="sidebar__social">
-                    <li className="sidebar__social-item">
-                        <a href="/" className="sidebar__social-link">
-                            <Globe className="sidebar__social-icon" />
-                        </a>
-                    </li>
-                    <li className="sidebar__social-item">
-                        <a href="/" className="sidebar__social-link">
-                            <Telegram className="sidebar__social-icon" />
-                        </a>
-                    </li>
-                    <li className="sidebar__social-item">
-                        <a href="/" className="sidebar__social-link">
-                            <Twitter className="sidebar__social-icon" />
-                        </a>
-                    </li>
-                </ul>
+                <Social className="social--sidebar" />
                 <button className="sidebar__switcher">
                     <img src={switcherImage} alt="swithcer" className="sidebar__switcher-icon" />
                 </button>

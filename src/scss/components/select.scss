@@ -106,3 +106,22 @@
         height: 48px;
     }
 }
+
+.select {
+
+    &--comments &__button {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+    }
+
+    &--comments &__button-arrow {
+        margin-left: 6px;
+    }
+
+    &--comments &__list-wrapper {
+        width: max-content;
+        right: 0;
+        left: unset;
+    }
+}

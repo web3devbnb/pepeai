@@ -32,37 +32,6 @@
         color: #fff;
     }
 
-    &__progress {
-        font-size: 14px;
-    }
-
-    &__progress-header {
-        display: flex;
-        justify-content: space-between;
-
-        color: #fff;
-    }
-
-    &__progress-bar {
-        height: 6px;
-        margin-top: 8px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 100px;
-    }
-
-    &__progress-track {
-        display: block;
-        height: 100%;
-        background-color: $green;
-        border-radius: 100px;
-    }
-
-    &__progress-row {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 8px;
-    }
-
     &__list {
         margin-top: 16px;
     }
@@ -101,42 +70,6 @@
     &__date-value {
         margin-top: 5px;
         color: #fff;
-    }
-
-    &__badge {
-        display: flex;
-        align-items: center;
-
-        height: 32px;
-        padding: 0 12px;
-        border-radius: 8px;
-
-        font-size: 14px;
-    }
-
-    &__badge:before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        margin-right: 8px;
-
-        border-radius: 50%;
-        background-color: currentColor;
-    }
-
-    &__badge.live {
-        background: rgba(49, 188, 121, 0.2);
-        color: $green;
-    }
-
-    &__badge.upcoming {
-        background: rgba(254, 169, 41, 0.2);
-        color: $orange;
-    }
-
-    &__badge.cancelled {
-        background-color: rgba(128, 129, 145, 0.2);
-        color: $mudy;
     }
 }
 
