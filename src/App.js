@@ -8,6 +8,8 @@ import Sidebar from "./components/Sidebar";
 import CreateToken from './components/pages/CreateToken';
 import LaunchpadList from "./components/pages/LaunchpadList/LaunchpadList";
 import TokenDetails from './components/pages/LaunchpadList/TokenDetails';
+import CreateLock from './components/pages/CreateLock';
+import Tokens from "./components/pages/Tokens";
 
 function App() {
     const [popupShow, setPopupShow] = useState(false);
@@ -40,6 +42,8 @@ function App() {
                     <Route path="/create_token" element={<CreateToken />} />
                     <Route path="/launchpad_list" element={<LaunchpadList />} />
                     <Route path="/launchpad_list/:id" element={<TokenDetails />} />
+                    <Route path="/create_lock" element={<CreateLock />} />
+                    <Route path="/tokens" element={<Tokens />} />
                 </Routes>
                 <p className="disclaimer container">Disclaimer: The information provided shall not in any way constitute a recommendation as to whether you should invest in any product discussed. We accept no liability for any loss occasioned to any person acting or refraining from action as a result of any material provided or published.</p>
             </main>

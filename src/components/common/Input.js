@@ -1,9 +1,9 @@
 import NumberFormat from "react-number-format";
 
-export default function Input({ className, type = "text", value, onChange, title, displayType = "text", placeholder, separator = true, errors, info, ...props }) {
+export default function Input({ className, type = "text", value, onChange, onClick, title, displayType = "text", placeholder, separator = true, errors, info, children, Icon, ...props }) {
 
     const id = Math.random();
-
+    
     return (
         <div className={"input-wrapper " + (className ? className : "")}>
             {title &&
@@ -13,12 +13,14 @@ export default function Input({ className, type = "text", value, onChange, title
                 </div>
             }
             <div className="input-wrapper__row">
+                {children && children}
                 {type === "text" ?
-                    <input type={type} className="input-wrapper__input" value={value} onChange={onChange} id={id} placeholder={placeholder} {...props} /> :
-                    type === "textarea" ?
+                    <input type={type} className="input-wrapper__input" value={value} onClick={onClick} onChange={onChange} id={id} placeholder={placeholder} {...props} /> :
+                    (type === "textarea" ?
                         <textarea className="input-wrapper__input" value={value} onChange={onChange} id={id} placeholder={placeholder} {...props} /> :
-                        <NumberFormat className="input-wrapper__input" value={value} onValueChange={onChange} id={id} thousandSeparator={separator} displayType={displayType} allowLeadingZeros={false} allowNegative={false} placeholder={placeholder} {...props} />
+                        <NumberFormat className="input-wrapper__input" value={value} onClick={onClick} onValueChange={onChange} id={id} thousandSeparator={separator} displayType={displayType} allowLeadingZeros={false} allowNegative={false} placeholder={placeholder} {...props} />)
                 }
+                {Icon && <Icon className="input-wrapper__icon" />}
             </div>
             {errors &&
                 <ul className="input-wrapper__errors">

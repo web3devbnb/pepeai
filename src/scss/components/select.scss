@@ -125,3 +125,38 @@
         left: unset;
     }
 }
+
+.select {
+
+    &--time &__button {
+        height: 40px;
+        background: #1B1A1A;
+    }
+
+    &--time &__button-arrow {
+        display: none;
+    }
+
+    &--time &__item-button {
+        padding: 0;
+        min-height: 44px;
+        font-size: 16px;
+    }
+
+    &--time &__list-wrapper {
+        top: calc(100% - 30px);
+        padding-top: 30px;
+        padding-left: 16px;
+        padding-right: 5px;
+        background-color: #1B1A1A;
+        box-shadow: 0px 10px 40px rgba(8, 9, 11, 0.5)
+    }
+
+    &--time &__scrollwrapper {
+        padding-right: 5px;
+    }
+
+    &--time.opened &__button {
+        border-color: $red;
+    }
+}

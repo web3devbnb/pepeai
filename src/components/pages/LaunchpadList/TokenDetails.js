@@ -69,7 +69,7 @@ export default function TokenDetails() {
                 <h1 className="title title--page">Launchpad Details</h1>
             </div>
             <div className="details__column details__column--1">
-                <div className="details__wrapper">
+                <div className="details__wrapper details__wrapper--1">
                     <div className="details__top">
                         <img src={tokenImage} className="details__image" alt="name" />
                         <div className="details__top-column">

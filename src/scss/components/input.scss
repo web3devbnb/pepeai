@@ -11,6 +11,7 @@
     
     &__row {
         height: 48px;
+        position: relative;
 
         background: #202226;
         border: 1px solid #484545;
@@ -39,6 +40,13 @@
 
     &__info {
         color: #fff;
+    }
+
+    &__icon {
+        pointer-events: none;
+        color: #fff;
+        position: absolute;
+        right: 20px;
     }
 }
 
@@ -120,5 +128,20 @@
 
     &--comments &__row {
         height: 120px;
+    }
+}
+
+.input-wrapper {
+
+    &--icon &__row {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.input-wrapper {
+
+    &--items &__row {
+        height: 40px;
     }
 }
