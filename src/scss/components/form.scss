@@ -46,9 +46,45 @@
         margin-bottom: 20px;
     }
 
+    &__input-wrapper--100 {
+        width: 100%;
+    }
+
     &__title {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    &__checkboxes {
+        display: flex;
+    }
+
+    &__checkbox:not(:first-child) {
+        margin-left: 28px;
+    }
+
+    &__text {
+        width: 100%;
+        color: #fff;
+        line-height: 1.5;
+    }
+
+    &__title--mb {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        width: 100%;
+    }
+
+    &__button {
+        width: 248px;
+    }
+
+    &__button:not(:first-child) {
+        margin-left: 20px;
     }
 }
 
@@ -90,5 +126,65 @@
     &--lock &__button {
         width: 220px;
         margin-top: 20px;
+    }
+}
+
+.form {
+
+    &--launchpad &__title {
+        font-size: 26px;
+    }
+
+    &--launchpad &__input-wrapper--last {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .form {
+
+        &__input-wrapper {
+            width: 100%;
+        }
+    }
+
+    .form {
+
+        &--address &__submit {
+            width: 48%;
+            margin-top: 0;
+        }
+
+        &--address &__button {
+            width: 48%;
+            margin-left: 0;
+        }
+    }
+
+    .form {
+
+        &--token &__submit {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &--token &__input-wrapper--last {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+
+    .form {
+        padding: 24px 15px;
+    }
+
+    .form {
+
+        &--address &__button--header {
+            padding: 0 20px;
+        }
     }
 }

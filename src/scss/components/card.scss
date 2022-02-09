@@ -102,3 +102,17 @@
         margin-top: 16px;
     }
 }
+
+@media (max-width: 1399px) {
+
+    .card {
+
+        &--token {
+            padding: 20px 18px 20px 18px;
+        }
+
+        &--token &__button {
+            padding: 0 20px;
+        }
+    }
+}

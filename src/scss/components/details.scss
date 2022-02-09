@@ -82,6 +82,11 @@
         margin-top: 24px;
     }
 
+    &__image {
+        width: 72px;
+        height: 72px;
+    }
+
     &__item {
         display: flex;
         justify-content: space-between;
@@ -89,6 +94,11 @@
 
     &__item-column {
         text-align: right;
+    }
+
+    &__text {
+        margin-top: 20px;
+        line-height: 1.5;
     }
 
     &__item:not(:first-child) {
@@ -100,6 +110,7 @@
     &__item-text {
         font-family: $font-r;
         font-size: 16px;
+        line-height: 1;
     }
 
     &__item-text--value {
@@ -123,6 +134,12 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    &__item-text--copy--2:before {
+        order: 1;
+        margin-right: 0;
+        margin-left: 6px;
     }
 
     &__item-text--copy:hover {
@@ -178,5 +195,51 @@
 
     &__comments {
         margin-top: 30px;
+    }
+}
+
+.details {
+
+    &--item &__wrapper {
+        width: 100%;
+    }
+
+    &--item &__wrapper:not(:first-child) {
+        margin-top: 0;
+    }
+
+    &--item &__wrapper--2:nth-child(n) {
+        margin-top: 20px;
+    }
+}
+
+.details {
+
+    &--airdrop &__columns {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &--airdrop &__wrapper {
+        height: 100%;
+    }
+
+    &--airdrop &__title--small {
+        font-family: $font-r;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    &--airdrop &__progress {
+        margin-top: 40px;
+    }
+
+    &--airdrop &__list--2 {
+        margin-top: 40px;
+    }
+
+    &--airdrop &__title span {
+        color: rgba(255, 255, 255, 0.5);
     }
 }

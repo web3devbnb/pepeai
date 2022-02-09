@@ -5,7 +5,6 @@ import logoImage from "../img/common/logo.png";
 import bscIcon from "../img/icons/bsc.png";
 import Home from './../Icons/Home';
 import Rocket from './../Icons/Rocket';
-import switcherImage from "../img/svg/switcher.svg";
 import Lock from './../Icons/Lock';
 import Balloon from './../Icons/Balloon';
 import Arrow from './../Icons/Arrow';
@@ -52,10 +51,12 @@ const menu = [
     }
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ setNetworkPopupShow, setPopupShow, menuVisible }) {
+    console.log(menuVisible);
     const location = useLocation();
     const submenuLists = useRef([]);
     const [contentHeight, setContentHeight] = useState(menu.map(item => 0));
+    const [nightmode, setNightmode] = useState(false);
 
     function toggleContent(index) {
         let textHeight = submenuLists.current[index - 1].clientHeight;
@@ -72,59 +73,61 @@ export default function Sidebar() {
     }
 
     return (
-        <div className="sidebar scrollwrapper">
-            <div className="sidebar__wrapper">
-                <Link to="/" className="sidebar__logo">
-                    <img src={logoImage} alt="logo" className="sidebar__logo-image" />
-                </Link>
-                <button className="sidebar__button sidebar__button--wallet">
-                    <Wallet className="sidebar__button-icon" />
-                    <span>Connect Wallet</span>
-                </button>
-                <div className="sidebar__button sidebar__button--net">
-                    <img src={bscIcon} alt="BSC" className="sidebar__button-icon" />
-                    <span>BSC Mainnet</span>
+        <div className={"sidebar scrollwrapper" + (menuVisible ? " opened" : "")}>
+            <div className="sidebar__inner">
+                <div className="sidebar__wrapper">
+                    <Link to="/" className="sidebar__logo">
+                        <img src={logoImage} alt="logo" className="sidebar__logo-image" />
+                    </Link>
+                    <button className="sidebar__button sidebar__button--wallet" onClick={() => setPopupShow(true)}>
+                        <Wallet className="sidebar__button-icon" />
+                        <span>Connect Wallet</span>
+                    </button>
+                    <button className="sidebar__button sidebar__button--net" onClick={() => setNetworkPopupShow(true)}>
+                        <img src={bscIcon} alt="BSC" className="sidebar__button-icon" />
+                        <span>BSC Mainnet</span>
+                    </button>
                 </div>
+                <ul className="sidebar__menu">
+                    {menu.map((item, index) => {
+                        return (
+                            item.to ?
+                                <li className="sidebar__menu-item" key={item.id}>
+                                    <Link to={item.to} className={"sidebar__menu-button" + (checkUrl(item.to) ? " active" : "")} onClick={() => setContentHeight(menu.map(item => 0))}>
+                                        <item.icon className="sidebar__menu-icon" />
+                                        <span>{item.title}</span>
+                                    </Link>
+                                </li> :
+                                <li className="sidebar__menu-item" key={item.id}>
+                                    <button to="/" className={"sidebar__menu-button" + (contentHeight[index] > 0 ? " active" : "")} onClick={() => toggleContent(index)}>
+                                        <item.icon className="sidebar__menu-icon" />
+                                        <span>{item.title}</span>
+                                        <Arrow className="sidebar__menu-arrow" />
+                                    </button>
+                                    {item.submenu &&
+                                        <div className="sidebar__submenu" style={{ height: contentHeight[index] }}>
+                                            <ul className="sidebar__submenu-list" ref={el => addToRefs(el, submenuLists)}>
+                                                {item.submenu.map(subItem => {
+                                                    return (
+                                                        <li className="sidebar__submenu-item" key={subItem.id}>
+                                                            <Link to={subItem.to} className={"sidebar__submenu-link" + (checkUrl(subItem.to) ? " active" : "")}>{subItem.title}</Link>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        </div>
+                                    }
+                                </li>
+                        );
+                    })}
+                </ul>
+                <footer className="sidebar__footer sidebar__wrapper">
+                    <Social className="social--sidebar" />
+                    <button className={"sidebar__switcher switcher" + (nightmode ? " active" : "")} onClick={() => setNightmode(!nightmode)}>
+                        <div className='switcher__round' />
+                    </button>
+                </footer>
             </div>
-            <ul className="sidebar__menu">
-                {menu.map((item, index) => {
-                    return (
-                        item.to ?
-                            <li className="sidebar__menu-item" key={item.id}>
-                                <Link to={item.to} className={"sidebar__menu-button" + (checkUrl(item.to) ? " active" : "")} onClick={() => setContentHeight(menu.map(item => 0))}>
-                                    <item.icon className="sidebar__menu-icon" />
-                                    <span>{item.title}</span>
-                                </Link>
-                            </li> :
-                            <li className="sidebar__menu-item" key={item.id}>
-                                <button to="/" className={"sidebar__menu-button" + (contentHeight[index] > 0 ? " active" : "")} onClick={() => toggleContent(index)}>
-                                    <item.icon className="sidebar__menu-icon" />
-                                    <span>{item.title}</span>
-                                    <Arrow className="sidebar__menu-arrow" />
-                                </button>
-                                {item.submenu &&
-                                    <div className="sidebar__submenu" style={{ height: contentHeight[index] }}>
-                                        <ul className="sidebar__submenu-list" ref={el => addToRefs(el, submenuLists)}>
-                                            {item.submenu.map(subItem => {
-                                                return (
-                                                    <li className="sidebar__submenu-item" key={subItem.id}>
-                                                        <Link to={subItem.to} className={"sidebar__submenu-link" + (checkUrl(subItem.to) ? " active" : "")}>{subItem.title}</Link>
-                                                    </li>
-                                                );
-                                            })}
-                                        </ul>
-                                    </div>
-                                }
-                            </li>
-                    );
-                })}
-            </ul>
-            <footer className="sidebar__footer sidebar__wrapper">
-                <Social className="social--sidebar" />
-                <button className="sidebar__switcher">
-                    <img src={switcherImage} alt="swithcer" className="sidebar__switcher-icon" />
-                </button>
-            </footer>
         </div>
     );
 }

@@ -63,63 +63,17 @@
     }
 }
 
-@media (max-width: 989px) {
+@media (max-width: 479px) {
 
     .button {
-
-        &--header {
-            width: 170px;
-            height: 45px;
-
-            padding: 0px 20px;
-            margin-left: 10px;
-            margin-right: 20px;
-        }
+        height: 44px;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 359px) {
 
     .button {
-
-        &--more {
-            width: 40px;
-            height: 32px;
-
-            background: #202226;
-            border: 1px solid #484545;
-            border-radius: 6px;
-        }
-    }
-
-    .button {
-
-        &--header {
-            max-width: 155px;
-            height: 36px;
-            margin-left: 0;
-            padding: 0 20px;
-            font-size: 12px;
-            border-radius: 6px;
-        }
-    }
-}
-
-@media (max-width: 619px) {
-
-    .button {
-
-        &--round {
-            width: 36px;
-            height: 36px;
-        }
-    }
-
-    .button {
-
-        &--form {
-            height: 48px;
-            font-size: 14px;
-        }
+        height: 40px;
+        font-size: 12px;
     }
 }

@@ -47,3 +47,18 @@
         color: $red;
     }
 }
+
+@media (max-width: 1099px) and (min-width: 990px) {
+
+    .social {
+
+        &__link {
+            width: 16px;
+        }
+
+        &--sidebar &__item:not(:first-child) {
+            margin-left: 10px;
+            padding-left: 10px;
+        }
+    }
+}

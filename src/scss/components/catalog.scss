@@ -86,4 +86,52 @@
     &__filter:not(:first-child) {
         margin-left: 20px;
     }
+
+    &__stats {
+        display: flex;
+
+        width: 100%;
+        height: 132px;
+        margin-top: 40px;
+
+        background: rgba(32, 34, 38, 0.8);
+        border: 1px solid #484545;
+        backdrop-filter: blur(40px);
+        border-radius: 26px;
+    }
+
+    &__stats-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        width: 50%;
+        height: 100%;
+
+        position: relative;
+    }
+
+    &__stats-column:not(:first-child):before {
+        content: "";
+        height: 64px;
+        width: 1px;
+
+        position: absolute;
+        left: 0;
+
+        background: #3D3D3D;
+    }
+
+    &__stats-title {
+        text-transform: uppercase;
+    }
+
+    &__stats-value {
+        margin-top: 12px;
+        font-family: $font-stx;
+        font-size: 48px;
+        color: #fff;
+    }
 }

@@ -145,3 +145,17 @@
         height: 40px;
     }
 }
+
+@media (max-width: 479px) {
+
+    .input-wrapper {
+
+        &__input {
+            padding: 0 10px;
+        }
+
+        &__errors {
+            margin-top: 12px;
+        }
+    }
+}

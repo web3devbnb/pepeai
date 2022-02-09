@@ -88,6 +88,7 @@ export default function TimeSelect({ className, changeTime, opened, setOpened })
         mode: "AM"
     });
 
+
     useEffect(() => {
         function handleBottomPosition() {
             setBottom(((window.innerHeight - window.scrollY - wrapper.current.getBoundingClientRect().bottom) - 300) < 0);
@@ -95,12 +96,21 @@ export default function TimeSelect({ className, changeTime, opened, setOpened })
 
         handleBottomPosition();
 
+        function handleDocumentClick(e) {
+            if (opened && !e.target.closest('.time')) {
+                setOpened(false);
+            }
+        };
+
+        document.addEventListener('click', handleDocumentClick);
+
         window.addEventListener('resize', handleBottomPosition);
 
         return () => {
+            document.removeEventListener('click', handleDocumentClick);
             window.removeEventListener('resize', handleBottomPosition);
         }
-    }, []);
+    }, [opened, setOpened]);
 
     return (
         <div className={"time " + (className ? className : "") + (opened ? " opened" : "") + (bottom ? " bottom" : "")} ref={wrapper}>

@@ -60,3 +60,98 @@
         color: #fff;
     }
 }
+
+@media (max-width: 1399px) {
+
+    .home {
+
+        &__stats-item {
+            width: calc(25% - 10px);
+            padding: 25px 20px;
+        }
+
+        &__stats-value {
+            font-size: 30px;
+        }
+    }
+}
+
+@media (max-width: 1219px) {
+
+    .home {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .home {
+        padding-top: 24px;
+
+        &__text {
+            margin-top: 16px;
+            font-size: 16px;
+        }
+
+        &__stats {
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+
+        &__stats-item {
+            width: 49%;
+            padding: 36px 32px;
+        }
+
+        &__stats-item:nth-child(n+3) {
+            margin-top: 20px;
+        }
+
+        &__stats-value {
+            font-size: 48px;
+        }
+
+        &__buttons {
+            margin-top: 32px;
+        }
+    }
+}
+
+@media (max-width: 619px) {
+
+    .home {
+
+        &__stats-item {
+            width: 100%;
+        }
+
+        &__stats {
+            max-width: 260px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__stats-item:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+
+    .home {
+
+        &__button {
+            width: 100%;
+        }
+
+        &__button:not(:first-child) {
+            margin-left: 0;
+            margin-top: 16px;
+        }
+
+        &__buttons {
+            flex-direction: column;
+        }
+    }
+}

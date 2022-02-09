@@ -62,7 +62,7 @@ input, textarea {
     display: block;
     color: rgba(255, 255, 255, 0.5);
 
-    &:after {
+    &--required:after {
         content: " *";
         color: $red;
     }
@@ -233,10 +233,29 @@ button {
     }
 }
 
-@media (max-width: 767px) {
-    body {
+@media (max-width: 1099px) {
+
+    .main {
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 989px) {
+
+    .main {
+        width: 100%;
+        padding-top: 120px;
         background: radial-gradient(50% 50% at 50% 50%, #363434 0%, #161616 100%), #ffffff;
     }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+
 
     .container {
         padding-left: 15px;
@@ -244,31 +263,9 @@ button {
     }
 }
 
-@media (max-width: 619px) {
+@media (max-width: 359px) {
+
     body {
         font-size: 12px;
     }
-
-    .scrollwrapper {
-        padding-right: 2px;
-    }
-}
-
-@media (max-width: 479px) {
-    .remove {
-        width: 34px;
-        height: 34px;
-    }
-}
-
-.info-popup {
-    padding: 16px;
-    font-size: 16px;
-    line-height: 130%;
-    border-radius: 16px;
-    max-width: 320px;
-    z-index: 101;
-    background: rgb(39, 38, 44);
-    color: rgb(244, 238, 255);
-    box-shadow: rgb(0 0 0 / 20%) 0px 0px 2px, rgb(14 14 44 / 10%) 0px 4px 12px -8px;
 }

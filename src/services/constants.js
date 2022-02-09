@@ -135,3 +135,122 @@ export const contributionsArray = [
         id: 3
     }
 ];
+
+export const allAirdrops = [
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: false,
+        startDate: 1644152333000,
+        endDate: 1646571533000,
+        id: 1
+    },
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: false,
+        startDate: 1644152333000,
+        endDate: 1646571533000,
+        id: 2
+    },
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: true,
+        startDate: 1654520333000,
+        endDate: 1657112333000,
+        id: 3
+    },
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: false,
+        startDate: 1644152333000,
+        endDate: 1646571533000,
+        id: 4
+    },
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: false,
+        startDate: 1651841806000,
+        endDate: 1654520206000,
+        id: 5
+    },
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: true,
+        startDate: 1654520333000,
+        endDate: 1657112333000,
+        id: 6
+    }
+];
+
+export const myAirdrops = [
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: false,
+        startDate: 1644152333000,
+        endDate: 1646571533000,
+        id: 1
+    },
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: true,
+        startDate: 1654520333000,
+        endDate: 1657112333000,
+        id: 2
+    },
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: false,
+        startDate: 1644152333000,
+        endDate: 1646571533000,
+        id: 1
+    }
+];
+
+export const createdAirdrops = [
+    {
+        name: "EFT AIRDROP",
+        image: tokenImage,
+        token: "EFT",
+        totalToken: "10.000.000.000",
+        participants: 12,
+        cancelled: false,
+        startDate: 1644152333000,
+        endDate: 1646571533000,
+        id: 1
+    }
+];
