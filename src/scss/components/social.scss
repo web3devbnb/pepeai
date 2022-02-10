@@ -48,6 +48,20 @@
     }
 }
 
+.social {
+
+    &--card &__item:not(:first-child) {
+        margin-left: 8px;
+        padding-left: 8px;
+        border-left: 1px solid #3D3D3D;
+    }
+
+    &--card &__link {
+        width: 16px;
+        height: 16px;
+    }
+}
+
 @media (max-width: 1099px) and (min-width: 990px) {
 
     .social {
