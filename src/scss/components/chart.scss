@@ -122,3 +122,31 @@
         text-decoration: underline;
     }
 }
+
+@media (max-width: 1219px) and (min-width: 621px) {
+
+    .chart {
+
+        &__label-title {
+            font-size: 12px;
+        }
+
+        &__label:before {
+            width: 16px;
+        }
+
+        &__wrapper {
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: 359px) {
+
+    .chart {
+
+        &__wrapper {
+            width: 66%;
+        }
+    }
+}

@@ -6,7 +6,7 @@ export default function AirdropList() {
     const [tokens, setTokens] = useState(allAirdrops);
     
     return (
-        <div className="catalog container">
+        <div className="catalog catalog--airdrop container">
             <h1 className="title title--page">Airdrop List</h1>
             <div className="catalog__stats">
                 <div className="catalog__stats-column">
@@ -29,7 +29,7 @@ export default function AirdropList() {
                     <button className={"catalog__tabs-button" + (tokens === createdAirdrops ? " active" : "")} onClick={() => setTokens(createdAirdrops)}>Created by you</button>
                 </li>
             </ul>
-            <ul className="cards-list">
+            <ul className="cards-list cards-list--catalog">
                 {tokens.map(item => {
                     return (
                         <li className="cards-list__item" key={item.id}>

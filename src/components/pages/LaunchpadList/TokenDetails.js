@@ -14,6 +14,8 @@ import Twitter from '../../../Icons/Twitter';
 import Facebook from './../../../Icons/Facebook';
 import Google from './../../../Icons/Google';
 import ArrowFilled from './../../../Icons/ArrowFilled';
+import useSmallScreen from './../../../hooks/useSmallScreen';
+import truncate from '../../../services/truncate';
 
 const sortArray = [
     { title: "Sort by best", id: 0, selected: true },
@@ -25,6 +27,7 @@ export default function TokenDetails() {
     const [value, setValue] = useState("");
     const [comment, setComment] = useState("");
     const { chart, handleChartArray } = useChart();
+    const { smallScreen } = useSmallScreen(1220);
 
     const countdownRenderer = ({ formatted }) => {
         return (
@@ -89,7 +92,7 @@ export default function TokenDetails() {
                         </li>
                         <li className="details__item">
                             <span className="details__item-text">Presale Address</span>
-                            <button className="details__item-text details__item-text--value details__item-text--copy">0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15</button>
+                            <button className="details__item-text details__item-text--value details__item-text--copy">{smallScreen ? truncate("0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15", 20) : "0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15"}</button>
                         </li>
                         <li className="details__item">
                             <span className="details__item-text">Token Decimals</span>
@@ -98,7 +101,7 @@ export default function TokenDetails() {
                         <li className="details__item">
                             <span className="details__item-text">Token Address</span>
                             <div className="details__item-column">
-                                <button className="details__item-text details__item-text--value details__item-text--copy">0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15</button>
+                                <button className="details__item-text details__item-text--value details__item-text--copy">{smallScreen ? truncate("0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15", 20) : "0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15"}</button>
                                 <div className="details__warning">(Do not send BNB to the token address!)</div>
                             </div>
                         </li>

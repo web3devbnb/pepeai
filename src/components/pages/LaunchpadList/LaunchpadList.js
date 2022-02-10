@@ -37,11 +37,11 @@ export default function LaunchpadList() {
                 </li>
             </ul>
             <div className="catalog__filters">
-                <Select list={filtersArray} Icon={Filter} className="catalog__filter select--filter" />
-                <Select list={sortArray} Icon={Sort} className="catalog__filter select--sort" />
+                <Select list={filtersArray} Icon={Filter} className="catalog__filter select--catalog select--filter" />
+                <Select list={sortArray} Icon={Sort} className="catalog__filter select--catalog select--sort" />
                 <Input type="text" value={search} onChange={(e) => setSearch(e.target.value)} className="catalog__filter input-wrapper--search" placeholder="Search..." />
             </div>
-            <ul className="cards-list">
+            <ul className="cards-list cards-list--catalog">
                 {tokens.map(item => {
                     return (
                         <li className="cards-list__item" key={item.id}>

@@ -71,7 +71,7 @@
     }
 
     &__social {
-        margin-top: 5px;
+        margin-top: 9px;
     }
 
     &__badge {
@@ -164,6 +164,7 @@
         background: rgba(231, 45, 45, 0.1);
         border-radius: 8px;
         color: #fff;
+        text-align: center;
     }
 
     &__countdown-wrapper {
@@ -241,5 +242,138 @@
 
     &--airdrop &__title span {
         color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+@media (max-width: 1219px) {
+
+    .details {
+
+        &__button {
+            height: 44px;
+        }
+
+        &__comments {
+            margin-top: 16px;
+        }
+
+        &__column--2 {
+            width: calc(32% - 16px);
+        }
+
+        &__column--1 {
+            width: 68%;
+        }
+
+        &__item-text {
+            font-size: 14px;
+        }
+
+        &__item-text--value {
+            margin-left: 20px;
+            text-align: right;
+        }
+
+        &__item-column &__item-text--copy {
+            margin-left: auto;
+        }
+
+        &__list--allocations &__item-text--value {
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width: 1219px) and (min-width: 621px) {
+
+    .details {
+
+        &__info {
+            font-size: 12px;
+        }
+
+        &__wrapper {
+            padding: 16px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .details {
+
+        &__column {
+            width: 100%;
+        }
+
+        &__column--1 {
+            margin-bottom: 16px;
+        }
+    }
+
+    .details {
+
+        &--item &__wrapper--2 {
+            background: unset;
+            border: none;
+            padding: 0;
+        }
+
+        &--item &__title--2 {
+            text-align: center;
+        }
+    }
+
+    .details {
+
+        &--airdrop &__columns {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: 619px) {
+
+    .details {
+
+        &__warning {
+            font-size: 12px;
+            max-width: 127px;
+        }
+
+        &__top {
+            flex-wrap: wrap;
+        }
+
+        &__top-column {
+            width: 100%;
+            margin-left: 0;
+            order: 1;
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+
+    .details {
+
+        &__wrapper {
+            padding: 20px 15px 24px 15px;
+        }
+
+        &__item:not(:first-child) {
+            margin-top: 12px;
+            padding-top: 12px;
+        }
+
+        &__title {
+            font-size: 20px;
+        }
+
+        &__info {
+            width: 100%;
+            padding: 10px;
+        }
     }
 }

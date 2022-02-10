@@ -32,6 +32,10 @@
 
 .progress {
 
+    &--card {
+        margin-top: 16px;
+    }
+
     &--card &__bar {
         margin-top: 8px;
     }
@@ -41,5 +45,15 @@
 
     &--airdrop &__bar {
         margin-top: 8px;
+    }
+}
+
+@media (max-width: 1219px) {
+
+    .progress {
+
+        &--airdrop {
+            font-size: 12px;
+        }
     }
 }

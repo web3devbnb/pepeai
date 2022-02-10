@@ -86,6 +86,10 @@
         width: 6%;
     }
 
+    &__icons {
+        display: flex;
+    }
+
     &__icon {
         width: 36px;
         height: 36px;
@@ -97,7 +101,7 @@
         z-index: 2;
     }
 
-    &__icon:not(:first-child) {
+    &__icons &__icon:not(:first-child) {
         margin-left: -28px;
     }
 
@@ -181,5 +185,133 @@
 
     &--details &__column--4 {
         width: 6%;
+    }
+}
+
+@media (max-width: 1099px) {
+
+    .items {
+
+        &__column--3 {
+            width: 25%;
+        }
+
+        &__column--4 {
+            width: 20%;
+        }
+
+        &__column--5 {
+            width: 8%;
+        }
+    }
+
+    .items {
+
+        &--liquidity &__text {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    .items {
+        padding: 0;
+        background: unset;
+        border: none;
+
+        &__list-item {
+            flex-direction: column;
+            height: auto;
+            padding-top: 16px;
+            padding-bottom: 24px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        &__column {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            padding: 0;
+        }
+
+        &__column:not(:first-child) {
+            margin-top: 20px;
+        }
+
+        &__title {
+            width: 40%;
+        }
+
+        &__header {
+            flex-direction: column;
+        }
+
+        &__buttons {
+            width: 100%;
+            margin-bottom: 10px;
+            background: #111010;
+        }
+
+        &__list-item:not(:first-child) {
+            margin-top: 16px;
+        }
+
+        &__empty {
+            margin-top: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            background: rgba(32, 34, 38, 0.8);
+            border: 1px solid #484545;
+            backdrop-filter: blur(40px);
+            border-radius: 12px;
+        }
+
+        &__empty-button {
+            width: 100%;
+        }
+
+        &__empty-text {
+            font-size: 14px;
+        }
+    }
+
+    .items {
+
+        &--details &__column {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+
+    .items {
+
+        &__title {
+            font-size: 12px;
+        }
+
+        &__icon {
+            margin-right: 8px;
+        }
+    }
+}
+
+@media (max-width: 359px) {
+
+    .items {
+
+        &--liquidity &__icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        &--liquidity &__icons &__icon:not(:first-child) {
+            margin-left: -20px;
+        }
     }
 }

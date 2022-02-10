@@ -94,3 +94,11 @@
         font-size: 14px;
     }
 }
+
+@media (max-width: 479px) {
+
+    .time {
+        width: 100%;
+        border-radius: 8px;
+    }
+}

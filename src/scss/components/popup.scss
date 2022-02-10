@@ -74,6 +74,8 @@
         font-family: $font-sb;
         color: #ffffff;
         font-size: 18px;
+        text-align: left;
+        line-height: 1;
 
         transition: background-color 0.3s ease-out;
     }
@@ -119,7 +121,7 @@
 
         position: absolute;
         right: 12px;
-        top: -12px;
+        top: -9px;
 
         background: rgba(49, 188, 121, 0.2);
         backdrop-filter: blur(20px);

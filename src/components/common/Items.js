@@ -3,13 +3,15 @@ import Input from "./Input";
 import { Link } from 'react-router-dom';
 import emptyIcon from "../../img/sensei lock/empty.svg";
 import Paginate from "./Paginate";
+import useSmallScreen from './../../hooks/useSmallScreen';
 
 export default function Items({ className, list }) {
     const [currentTab, setCurrentTab] = useState(0);
     const [search, setSearch] = useState("");
+    const { smallScreen } = useSmallScreen(768);
 
     return (
-        <div className="items">
+        <div className={"items " + (className ? className : "")}>
             <div className="items__header">
                 <div className="items__buttons">
                     <button className={"items__button" + (currentTab === 0 ? " active" : "")} onClick={() => setCurrentTab(0)}>All</button>
@@ -20,14 +22,16 @@ export default function Items({ className, list }) {
             {list[currentTab].length > 0 ?
                 <>
                     <div className="items__list-wrapper">
-                        <div className="items__list-header">
-                            {Object.entries(list[0][0]).map(([key], index) => {
-                                if (key === "id") return "";
-                                return (
-                                    <div className={"items__title items__column items__column--" + (index + 1)} key={index}>{key}</div>
-                                );
-                            })}
-                        </div>
+                        {!smallScreen &&
+                            <div className="items__list-header">
+                                {Object.entries(list[0][0]).map(([key], index) => {
+                                    if (key === "id") return "";
+                                    return (
+                                        <div className={"items__title items__column items__column--" + (index + 1)} key={index}>{key}</div>
+                                    );
+                                })}
+                            </div>
+                        }
                         <Paginate list={list[currentTab]}>
                             {(currentItems) => {
                                 return (
@@ -41,22 +45,27 @@ export default function Items({ className, list }) {
                                                         if (index === 4) {
                                                             return (
                                                                 <div className={"items__column items__column--" + (index + 1)} key={index}>
+                                                                    {smallScreen && <div className="items__title">{key}</div>}
                                                                     <Link to={item["Action"]} className="items__text items__text--link">View</Link>
                                                                 </div>
                                                             )
                                                         } else if (index === 3) {
                                                             return (
                                                                 <div className={"items__column items__column--" + (index + 1)} key={index}>
+                                                                    {smallScreen && <div className="items__title">{key}</div>}
                                                                     <button className="items__text items__text--copy">{value}</button>
                                                                 </div>
                                                             );
                                                         } else if (index === 0) {
                                                             return (
                                                                 <div className={"items__column items__column--" + (index + 1)} key={index}>
+                                                                    {smallScreen && <div className="items__title">{key}</div>}
                                                                     {Array.isArray(item[key].icon) ?
-                                                                        item[key].icon.map((image, index) => {
-                                                                            return <img src={image} alt={item[key].name} className={"items__icon items__icon--" + (index + 1)} key={index} />
-                                                                        })
+                                                                        <div className="items__icons">
+                                                                            {item[key].icon.map((image, index) => {
+                                                                                return <img src={image} alt={item[key].name} className={"items__icon items__icon--" + (index + 1)} key={index} />
+                                                                            })}
+                                                                        </div>
                                                                         :
                                                                         <img src={item[key].icon} alt={item[key].name} className="items__icon" />
                                                                     }
@@ -66,6 +75,7 @@ export default function Items({ className, list }) {
                                                         } else {
                                                             return (
                                                                 <div className={"items__column items__column--" + (index + 1)} key={index}>
+                                                                    {smallScreen && <div className="items__title">{key}</div>}
                                                                     <span className="items__text">{value}</span>
                                                                 </div>
                                                             );

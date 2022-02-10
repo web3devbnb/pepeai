@@ -4,6 +4,8 @@ import Arrow2 from '../../../Icons/Arrow2';
 import { launchpadsArray } from '../../../services/constants';
 import Social from '../../common/Social';
 import Paginate from '../../common/Paginate';
+import useSmallScreen from './../../../hooks/useSmallScreen';
+import truncate from './../../../services/truncate';
 
 const allocations = [
     { address: "0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15", amount: "500,000,000 EFT", id: 0 },
@@ -22,6 +24,7 @@ const allocations = [
 ];
 
 export default function AirdropDetails() {
+    const { smallScreen } = useSmallScreen(1220);
 
     return (
         <div className="details details--airdrop container">
@@ -58,11 +61,11 @@ export default function AirdropDetails() {
                             </li>
                             <li className="details__item">
                                 <span className="details__item-text">Token Address</span>
-                                <button className="details__item-text details__item-text--value details__item-text--copy">0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15</button>
+                                <button className="details__item-text details__item-text--value details__item-text--copy">{smallScreen ? truncate("0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15", 20) : "0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15"}</button>
                             </li>
                             <li className="details__item">
                                 <span className="details__item-text">Airdrop Address</span>
-                                <button className="details__item-text details__item-text--value details__item-text--copy">0xC64b8502da0E7F5Db152668af2dbaF2c5f404829</button>
+                                <button className="details__item-text details__item-text--value details__item-text--copy">{smallScreen ? truncate("0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15", 20) : "0xEf6F6135F4fF3D3C1Bc559229214C8bCf1cc7a15"}</button>
                             </li>
                         </ul>
                     </div>
@@ -105,11 +108,11 @@ export default function AirdropDetails() {
                 <Paginate list={allocations}>
                     {(currentItems) => {
                         return (
-                            <ul className="details__list details__list--main">
+                            <ul className="details__list details__list--allocations details__list--main">
                                 {currentItems.map(item => {
                                     return (
                                         <li className="details__item" key={item.id}>
-                                            <button className="details__item-text details__item-text--value details__item-text--copy details__item-text--copy--2">{item.address}</button>
+                                            <button className="details__item-text details__item-text--value details__item-text--copy details__item-text--copy--2">{smallScreen ? truncate(item.address, 20) : item.address}</button>
                                             <span className="details__item-text details__item-text--value">{item.amount}</span>
                                         </li>
                                     )

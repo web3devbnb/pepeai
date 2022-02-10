@@ -68,7 +68,7 @@ export default function CreateLaunchpad2() {
             <Steps />
             <Form className="form--launchpad">
                 <h1 className="title title--form form__title">DeFi Launchpad Info</h1>
-                <Input type="number" displayType="input" className="form__input-wrapper" placeholder="0" title="Presale Rate" name="rate" info="If I spend 1 BNB how many tokens will I receive?" value={form.rate} onChange={handleInput} />
+                <Input type="number" displayType="input" className="form__input-wrapper form__input-wrapper--first" placeholder="0" title="Presale Rate" name="rate" info="If I spend 1 BNB how many tokens will I receive?" value={form.rate} onChange={handleInput} />
                 <div className="input-wrapper form__input-wrapper form__input-wrapper--100">
                     <div className="input-wrapper__header">
                         <h1 className="label">Sale Method</h1>
@@ -112,7 +112,7 @@ export default function CreateLaunchpad2() {
                     Enter the percentage of raised funds that should be allocated to Liquidity on (Min 51%, Max 100%)
                     If I spend 1 BNB on how many tokens will I receive? Usually this amount is lower that presale rate to allow for a higher listing price on.
                 </p>
-                <h1 className="title title--page form__title form__title--mb">Select start time & end time (UTC)</h1>
+                <h1 className="title title--form form__title form__title--mb">Select start time & end time (UTC)</h1>
                 <div className="input-wrapper input-wrapper--icon form__input-wrapper">
                     <div className="input-wrapper__header">
                         <label className="label label--required">Start Date (UTC)</label>

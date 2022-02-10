@@ -32,7 +32,7 @@ export default function Liquidity() {
     return (
         <div className="tokens container">
             <h1 className="title title--page">Liquidity</h1>
-            <Items list={list} className="items--token" />
+            <Items list={list} className="items--liquidity" />
         </div>
     );
 }

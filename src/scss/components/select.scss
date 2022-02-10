@@ -130,7 +130,7 @@
 
     &--time &__button {
         height: 40px;
-        background: #1B1A1A;
+        background: #1b1a1a;
     }
 
     &--time &__button-arrow {
@@ -148,8 +148,8 @@
         padding-top: 30px;
         padding-left: 16px;
         padding-right: 5px;
-        background-color: #1B1A1A;
-        box-shadow: 0px 10px 40px rgba(8, 9, 11, 0.5)
+        background-color: #1b1a1a;
+        box-shadow: 0px 10px 40px rgba(8, 9, 11, 0.5);
     }
 
     &--time &__scrollwrapper {
@@ -158,5 +158,42 @@
 
     &--time.opened &__button {
         border-color: $red;
+    }
+}
+
+.select {
+
+    &--catalog {
+        height: 40px;
+    }
+}
+
+@media (max-width: 479px) {
+
+    .select {
+
+        &--catalog &__button {
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        &--catalog &__button-icon {
+            margin-right: 8px;
+        }
+
+        &--catalog &__button-arrow {
+            margin-left: auto;
+        }
+
+        &--catalog &__item-button {
+            padding: 0 10px;
+        }
+    }
+
+    .select {
+
+        &--comments &__button {
+            font-size: 14px;
+        }
     }
 }

@@ -116,3 +116,50 @@
         }
     }
 }
+
+@media (max-width: 1219px) {
+
+    .cards-list {
+
+        &--catalog &__item {
+            width: calc(50% - 8px);
+        }
+    }
+}
+
+@media (max-width: 619px) {
+
+    .cards-list {
+
+        &--catalog {
+            max-width: 330px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &--catalog &__item {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 479px) {
+
+    .cards-list {
+        
+        &--catalog {
+            margin-top: 20px;
+        }
+    }
+
+    .card {
+
+        &--token {
+            padding: 20px 15px 20px 15px;
+        }
+
+        &--token &__title, &--token &__cap-value {
+            font-size: 18px;
+        }
+    }
+}

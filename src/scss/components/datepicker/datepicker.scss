@@ -705,3 +705,10 @@
     font-size: $datepicker__font-size * 1.8;
   }
 }
+
+@media (max-width: 479px) {
+
+  .react-datepicker {
+    border-radius: 8px;
+  }
+}
