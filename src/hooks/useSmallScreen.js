@@ -17,7 +17,5 @@ export default function useSmallScreen(size) {
         };
     }, [size]);
 
-    return {
-        smallScreen
-    }
+    return smallScreen
 }

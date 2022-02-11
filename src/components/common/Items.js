@@ -8,7 +8,7 @@ import useSmallScreen from './../../hooks/useSmallScreen';
 export default function Items({ className, list }) {
     const [currentTab, setCurrentTab] = useState(0);
     const [search, setSearch] = useState("");
-    const { smallScreen } = useSmallScreen(768);
+    const smallScreen = useSmallScreen(768);
 
     return (
         <div className={"items " + (className ? className : "")}>

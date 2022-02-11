@@ -27,7 +27,8 @@ export default function TokenDetails() {
     const [value, setValue] = useState("");
     const [comment, setComment] = useState("");
     const { chart, handleChartArray } = useChart();
-    const { smallScreen } = useSmallScreen(1220);
+    const smallScreen = useSmallScreen(1220);
+    const mobileScreen = useSmallScreen(480);
 
     const countdownRenderer = ({ formatted }) => {
         return (
@@ -55,7 +56,7 @@ export default function TokenDetails() {
     const graphLabel = (props) => {
 
         return (
-            <foreignObject x={props.dx} y={props.dy + 40} width="90px" height="30px" key={props.dataIndex} style={{ display: chart[props.dataIndex].active ? "block" : "none" }}>
+            <foreignObject x={props.dx} y={props.dy + 40} width={mobileScreen ? "130px" : "90px"} height={mobileScreen ? "45px" : "30px"} key={props.dataIndex} style={{ display: chart[props.dataIndex].active ? "block" : "none" }}>
                 <div className="chart__graph-label" style={{ color: chart[props.dataIndex].color }}>
                     <span>{chart[props.dataIndex].title + " — " + Number(props.dataEntry.percentage).toFixed((props.dataEntry.percentage % 1 === 0) ? 0 : 1) + "%"}</span>
                 </div>

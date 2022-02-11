@@ -31,7 +31,7 @@ export default function TokenCard({ item }) {
     }
 
     return (
-        <div className={"card card--token card--flip" + (flipped ? " flipped" : "")}>
+        <div className={"card card--token card--flip" + (flipped ? " flipped" : "") + " card--" + (item.level)}>
             <div className="card__wrapper">
                 <div className="card__face card__face--front">
                     <div className="card__row">

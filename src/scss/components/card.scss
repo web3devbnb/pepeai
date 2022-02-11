@@ -275,6 +275,21 @@
     }
 }
 
+.card {
+
+    &--high &__face {
+        box-shadow: 0px 6px 20px rgba(53, 166, 71, 0.24);
+    }
+
+    &--mid &__face {
+        box-shadow: 0px 6px 20px rgba(225, 228, 79, 0.24);
+    }
+
+    &--low &__face {
+        box-shadow: 0px 6px 20px rgba(231, 45, 45, 0.25);
+    }
+}
+
 @media (max-width: 1399px) {
 
     .card {

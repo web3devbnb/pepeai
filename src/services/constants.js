@@ -31,6 +31,7 @@ export const launchpadsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "high",
         id: 0
     },
     {
@@ -63,6 +64,7 @@ export const launchpadsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "mid",
         id: 1
     },
     {
@@ -95,6 +97,7 @@ export const launchpadsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "low",
         id: 2
     },
     {
@@ -127,6 +130,7 @@ export const launchpadsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "high",
         id: 3
     },
     {
@@ -159,6 +163,7 @@ export const launchpadsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "low",
         id: 4
     },
     {
@@ -191,6 +196,7 @@ export const launchpadsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "mid",
         id: 5
     }
 ];
@@ -226,6 +232,7 @@ export const contributionsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "low",
         id: 1
     },
     {
@@ -258,6 +265,7 @@ export const contributionsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "high",
         id: 2
     },
     {
@@ -290,6 +298,7 @@ export const contributionsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "mid",
         id: 0
     },
     {
@@ -322,6 +331,7 @@ export const contributionsArray = [
         vesting: "XXX",
         ratio: "XXX",
         voteScore: "XXX",
+        level: "low",
         id: 3
     }
 ];

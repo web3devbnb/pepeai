@@ -23,7 +23,7 @@ import useSmallScreen from './hooks/useSmallScreen';
 function App() {
     const [popupShow, setPopupShow] = useState(false);
     const [networkPopupShow, setNetworkPopupShow] = useState(false);
-    const { smallScreen } = useSmallScreen(990);
+    const smallScreen = useSmallScreen(990);
     const [menuVisible, setMenuVisible] = useState(false);
 
     useEffect(() => {

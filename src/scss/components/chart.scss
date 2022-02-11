@@ -141,6 +141,16 @@
     }
 }
 
+@media (max-width: 479px) {
+
+    .chart {
+
+        &__graph-label {
+            font-size: 10px;
+        }
+    }
+}
+
 @media (max-width: 359px) {
 
     .chart {

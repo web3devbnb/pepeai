@@ -24,7 +24,7 @@ const allocations = [
 ];
 
 export default function AirdropDetails() {
-    const { smallScreen } = useSmallScreen(1220);
+    const smallScreen = useSmallScreen(1220);
 
     return (
         <div className="details details--airdrop container">

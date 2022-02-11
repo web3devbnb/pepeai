@@ -4,7 +4,7 @@ import useSmallScreen from './../../hooks/useSmallScreen';
 import truncate from './../../services/truncate';
 
 export default function ItemDetails() {
-    const { smallScreen } = useSmallScreen(768);
+    const smallScreen = useSmallScreen(768);
 
     return (
         <div className="details details--item container">

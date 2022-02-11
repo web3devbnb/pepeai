@@ -6,7 +6,7 @@ import useSmallScreen from './../../hooks/useSmallScreen';
 
 export default function AddTokenAddress({ inputInfo }) {
     const [value, setValue] = useState("");
-    const { smallScreen } = useSmallScreen(768);
+    const smallScreen = useSmallScreen(768);
 
     return (
         <Form className="form--address">
