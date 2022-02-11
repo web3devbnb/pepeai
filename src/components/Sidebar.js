@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Wallet from '../Icons/Wallet';
 import logoImage from "../img/common/logo.png";
@@ -51,8 +51,7 @@ const menu = [
     }
 ];
 
-export default function Sidebar({ setNetworkPopupShow, setPopupShow, menuVisible }) {
-    console.log(menuVisible);
+export default function Sidebar({ setNetworkPopupShow, setPopupShow, menuVisible, setMenuVisible }) {
     const location = useLocation();
     const submenuLists = useRef([]);
     const [contentHeight, setContentHeight] = useState(menu.map(item => 0));
@@ -71,6 +70,10 @@ export default function Sidebar({ setNetworkPopupShow, setPopupShow, menuVisible
         let current_path = location.pathname;
         return url === current_path;
     }
+
+    useEffect(() => {
+        setMenuVisible(false);
+    }, [setMenuVisible, location.pathname]);
 
     return (
         <div className={"sidebar scrollwrapper" + (menuVisible ? " opened" : "")}>

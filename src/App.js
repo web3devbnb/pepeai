@@ -37,7 +37,7 @@ function App() {
     return (
         <>
             {smallScreen && <Header menuVisible={menuVisible} setMenuVisible={setMenuVisible} />}
-            <Sidebar setPopupShow={setPopupShow} setNetworkPopupShow={setNetworkPopupShow} menuVisible={menuVisible} />
+            <Sidebar setPopupShow={setPopupShow} setNetworkPopupShow={setNetworkPopupShow} menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
             <main className="main">
                 <Routes>
                     <Route path="/" element={<Home />} />
