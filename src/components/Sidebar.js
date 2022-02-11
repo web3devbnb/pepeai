@@ -62,7 +62,7 @@ export default function Sidebar({ setNetworkPopupShow, setPopupShow, menuVisible
         if (contentHeight[index] !== 0) {
             setContentHeight(state => state.map((item, itemIndex) => itemIndex === index ? 0 : item));
         } else {
-            setContentHeight(state => state.map((item, itemIndex) => itemIndex === index ? textHeight : item));
+            setContentHeight(state => state.map((item, itemIndex) => itemIndex === index ? textHeight : 0));
         }
     }
 
