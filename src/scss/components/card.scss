@@ -232,6 +232,7 @@
         background: unset;
         border: none;
         backdrop-filter: unset;
+        perspective: 3000px;
     }
 
     &--flip &__wrapper {
