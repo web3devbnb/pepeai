@@ -72,6 +72,7 @@ export default function Sidebar({ setNetworkPopupShow, setPopupShow, menuVisible
     }
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         setMenuVisible(false);
     }, [setMenuVisible, location.pathname]);
 
