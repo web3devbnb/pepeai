@@ -1,6 +1,6 @@
 import NumberFormat from "react-number-format";
 
-export default function Input({ className, type = "text", value, onChange, onClick, title, required = true, displayType = "text", placeholder, separator = true, errors, info, children, Icon, ...props }) {
+export default function Input({ className, type = "text", value, onChange, onClick, title, requiblue = true, displayType = "text", placeholder, separator = true, errors, info, children, Icon, ...props }) {
 
     const id = Math.random();
 
@@ -8,7 +8,7 @@ export default function Input({ className, type = "text", value, onChange, onCli
         <div className={"input-wrapper " + (className ? className : "")}>
             {title &&
                 <div className="input-wrapper__header">
-                    <label className={"label" + (required ? " label--required" : "")} to={id}>{title}</label>
+                    <label className={"label" + (requiblue ? " label--requiblue" : "")} to={id}>{title}</label>
                     {info && <p className="input-wrapper__info">{info}</p>}
                 </div>
             }

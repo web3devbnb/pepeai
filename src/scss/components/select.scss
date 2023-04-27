@@ -92,7 +92,7 @@
     }
 
     &__item-button.selected {
-        color: $red;
+        color: $blue;
     }
 
     &__item-button:hover {
@@ -157,7 +157,7 @@
     }
 
     &--time.opened &__button {
-        border-color: $red;
+        border-color: $blue;
     }
 }
 

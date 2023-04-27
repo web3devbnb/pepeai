@@ -12,7 +12,7 @@ body {
 
     font-family: $font-r;
     font-size: 14px;
-    color: $grey;
+    color: $green;
     line-height: 1;
     font-weight: 400;
 }
@@ -62,9 +62,9 @@ input, textarea {
     display: block;
     color: rgba(255, 255, 255, 0.5);
 
-    &--required:after {
+    &--requiblue:after {
         content: " *";
-        color: $red;
+        color: $blue;
     }
 
     &--comments {
@@ -125,7 +125,7 @@ button {
     }
 
     &:hover::-webkit-scrollbar-thumb {
-        background-color: darkgrey;
+        background-color: darkgreen;
     }
 }
 

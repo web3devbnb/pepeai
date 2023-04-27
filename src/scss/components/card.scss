@@ -80,7 +80,7 @@
     }
 
     &__more:hover {
-        color: $red;
+        color: $blue;
     }
 
     &__close {
@@ -92,7 +92,7 @@
         height: 20px;
         margin-left: auto;
         position: relative;
-        color: $red;
+        color: $blue;
     }
 
     &__close:before, &__close:after {

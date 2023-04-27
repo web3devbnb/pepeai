@@ -65,7 +65,7 @@ export default function CreateLock() {
                     <TimeSelect opened={opened} setOpened={setOpened} changeTime={changeTime} />
                 </Input>
                 <p className="form__info">You will pay: 0 BUSD</p>
-                <button className="button button--red form__button">Lock</button>
+                <button className="button button--blue form__button">Lock</button>
             </Form>
         </div>
     );

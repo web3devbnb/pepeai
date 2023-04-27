@@ -35,7 +35,7 @@ export default function CreateToken() {
                 <Input title="Symbol" displayType="input" placeholder="Ex: $SENSEI" className="form__input-wrapper" type="text" name="symbol" value={form.symbol} onChange={handleInput} />
                 <Input title="Decimals" displayType="input" placeholder="Ex: 18" className="form__input-wrapper" type="text" name="decimals" value={form.decimals} onChange={handleInput} />
                 <Input title="Total Supply" displayType="input" placeholder="Ex: 100000000" className="form__input-wrapper form__input-wrapper--last" type="number" name="totalSupply" value={form.totalSupply} onChange={handleInput} />
-                <button type="submit" className="button button--red form__submit">Create token</button>
+                <button type="submit" className="button button--blue form__submit">Create token</button>
             </Form>
         </div>
     );

@@ -94,7 +94,7 @@ export default function Items({ className, list }) {
                 <div className="items__empty">
                     <img src={emptyIcon} className="items__empty-image" alt="empty" />
                     <p className="items__empty-text">You don’t have any locks yet</p>
-                    <button className="button button--red items__empty-button">Create lock</button>
+                    <button className="button button--blue items__empty-button">Create lock</button>
                 </div>
             }
         </div>

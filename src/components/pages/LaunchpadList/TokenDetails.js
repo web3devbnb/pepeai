@@ -178,7 +178,7 @@ export default function TokenDetails() {
                         </div>
                         <h6>Amount</h6>
                         <BalanceInput value={value} onChange={(e) => setValue(e.target.value)} />
-                        <button className="button button--red details__button">Buy</button>
+                        <button className="button button--blue details__button">Buy</button>
                     </div>
                 </div>
                 <div className="details__wrapper">
@@ -266,7 +266,7 @@ export default function TokenDetails() {
                                 </li>
                             </ul>
                         </div>
-                        <button className="button button--grey comments__button">Publish</button>
+                        <button className="button button--green comments__button">Publish</button>
                     </div>
                     <ul className="comments__list">
                         <li className="comments__item">

@@ -102,7 +102,7 @@ export default function CreateLaunchpad2() {
                 </div>
                 <div className="input-wrapper form__input-wrapper">
                     <div className="input-wrapper__header">
-                        <label className="label label--required">Router</label>
+                        <label className="label label--requiblue">Router</label>
                     </div>
                     <Select list={routerSelect} callback={(index) => setForm({ ...form, refundType: routerSelect[index].title })} className="select--token" />
                 </div>
@@ -115,7 +115,7 @@ export default function CreateLaunchpad2() {
                 <h1 className="title title--form form__title form__title--mb">Select start time & end time (UTC)</h1>
                 <div className="input-wrapper input-wrapper--icon form__input-wrapper">
                     <div className="input-wrapper__header">
-                        <label className="label label--required">Start Date (UTC)</label>
+                        <label className="label label--requiblue">Start Date (UTC)</label>
                     </div>
                     <div className="input-wrapper__row">
                         <DatePicker className="input-wrapper__input" selected={form.startDate} onChange={(startDate) => setForm({ ...form, startDate })} dateFormat="dd.MM.yy" />
@@ -127,7 +127,7 @@ export default function CreateLaunchpad2() {
                 </Input>
                 <div className="input-wrapper input-wrapper--icon form__input-wrapper">
                     <div className="input-wrapper__header">
-                        <label className="label label--required">End Date (UTC)</label>
+                        <label className="label label--requiblue">End Date (UTC)</label>
                     </div>
                     <div className="input-wrapper__row">
                         <DatePicker className="input-wrapper__input" selected={form.endDate} onChange={(endDate) => setForm({ ...form, endDate })} dateFormat="dd.MM.yy" />
@@ -139,8 +139,8 @@ export default function CreateLaunchpad2() {
                 </Input>
                 <Input type="number" displayType="input" className="form__input-wrapper form__input-wrapper--last" placeholder="0" title="Listing Lockup (days)" name="listingLockup" value={form.listingLockup} onChange={handleInput} />
                 <div className="form__buttons">
-                    <button className="button button--grey button--border form__button">Back</button>
-                    <button className="button button--red form__button">Next</button>
+                    <button className="button button--green button--border form__button">Back</button>
+                    <button className="button button--blue form__button">Next</button>
                 </div>
             </Form>
         </div>

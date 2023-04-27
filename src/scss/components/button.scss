@@ -32,26 +32,26 @@
 
 .button {
 
-    &--red {
-        background-color: $red;
+    &--blue {
+        background-color: $blue;
         border: 1px solid transparent;
     }
 
-    &--red:hover, &--red.active {
+    &--blue:hover, &--blue.active {
         background-color: transparent;
-        border: 1px solid $red;
-        color: $red;
+        border: 1px solid $blue;
+        color: $blue;
     }
 }
 
 .button {
 
-    &--grey {
+    &--green {
         background-color: rgba(255, 255, 255, 0.05);
     }
 
-    &--grey:hover {
-        color: $red;
+    &--green:hover {
+        color: $blue;
         background-color: rgba(255, 255, 255, 0.1)
     }
 }
